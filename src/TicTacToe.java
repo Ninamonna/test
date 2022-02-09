@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -58,6 +59,18 @@ public class TicTacToe {
                         return;
                     }
                 }
+            }
+        }
+    }
+
+    private static void makeComputerMove(char[][] gameTable) {
+        Random random = new Random();
+        while (true) {
+            int row = random.nextInt(3);
+            int col = random.nextInt(3);
+            if (gameTable[row][col] == ' ') {
+                gameTable[row][col] = 'O';
+                return;
             }
         }
     }
